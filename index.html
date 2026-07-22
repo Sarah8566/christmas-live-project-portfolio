@@ -7,27 +7,27 @@
       name="description"
       content="小茹的项目管理转型作品集：以真实直播项目为案例，展示项目章程、WBS、交付物、甘特图、干系人管理、风险管理与项目复盘。"
     />
-    <meta name="theme-color" content="#f7f8f4" />
+    <meta name="theme-color" content="#f3efe6" />
     <title>圣诞直播项目｜小茹的项目管理作品集</title>
     <style>
 :root {
-  --paper: #f7f8f4;
-  --surface: #ffffff;
-  --surface-soft: #eef4f0;
-  --surface-blue: #edf3f8;
-  --surface-coral: #f9eee9;
-  --surface-gold: #f7f1df;
-  --ink: #21302a;
-  --muted: #63716a;
-  --line: #dbe3de;
-  --emerald: #237660;
-  --emerald-strong: #175b49;
-  --blue: #426e97;
-  --coral: #c95f43;
-  --gold: #aa7c20;
-  --high: #c64e3c;
-  --medium: #b17b13;
-  --shadow: 0 14px 40px rgba(40, 57, 48, 0.09);
+  --paper: #f3efe6;
+  --surface: #fbf8f2;
+  --surface-soft: #ece4d8;
+  --surface-blue: #e8edf0;
+  --surface-coral: #f5e6df;
+  --surface-gold: #f4ead2;
+  --ink: #2f2b26;
+  --muted: #706960;
+  --line: #d7cec1;
+  --emerald: #98664a;
+  --emerald-strong: #724934;
+  --blue: #5f7282;
+  --coral: #c26347;
+  --gold: #b2832c;
+  --high: #b94f3b;
+  --medium: #a87316;
+  --shadow: 0 14px 40px rgba(67, 50, 38, 0.09);
   --shell: 1180px;
   --header-h: 68px;
 }
@@ -112,11 +112,12 @@ ol {
   left: 0;
   width: 100%;
   height: var(--header-h);
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
   padding: 0 max(24px, calc((100vw - var(--shell)) / 2));
   border-bottom: 1px solid transparent;
-  background: rgba(247, 248, 244, 0.93);
+  background: rgba(243, 239, 230, 0.94);
   backdrop-filter: blur(16px);
   transition: border-color 180ms ease, box-shadow 180ms ease;
 }
@@ -131,6 +132,7 @@ ol {
   align-items: center;
   gap: 10px;
   min-width: 255px;
+  justify-self: start;
 }
 
 .brand-mark {
@@ -162,10 +164,11 @@ ol {
 }
 
 .desktop-nav {
-  margin-left: auto;
+  margin: 0;
   display: flex;
   align-items: center;
   gap: 4px;
+  justify-self: center;
 }
 
 .desktop-nav a {
@@ -226,12 +229,16 @@ ol {
   display: none;
 }
 
+.mobile-menu-button {
+  justify-self: end;
+}
+
 .hero {
   position: relative;
   min-height: 680px;
   padding: calc(var(--header-h) + 64px) 0 36px;
   overflow: hidden;
-  background: #eef3ef;
+  background: #e8ddd0;
   border-bottom: 1px solid var(--line);
 }
 
@@ -255,13 +262,13 @@ ol {
 .hero-shell {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+  grid-template-columns: minmax(0, 1fr);
   align-items: end;
-  gap: 72px;
+  gap: 0;
 }
 
 .hero-copy {
-  max-width: 720px;
+  max-width: 790px;
 }
 
 .eyebrow,
@@ -284,7 +291,7 @@ ol {
 .hero-lead {
   max-width: 675px;
   margin-top: 24px;
-  color: #405049;
+  color: #5b5148;
   font-size: 17px;
   line-height: 1.9;
 }
@@ -298,10 +305,10 @@ ol {
 
 .hero-meta span {
   padding: 6px 10px;
-  border: 1px solid rgba(35, 118, 96, 0.23);
+  border: 1px solid rgba(114, 73, 52, 0.24);
   border-radius: 4px;
   color: var(--emerald-strong);
-  background: rgba(255, 255, 255, 0.68);
+  background: rgba(251, 248, 242, 0.72);
   font-size: 12px;
   font-weight: 700;
 }
@@ -330,51 +337,6 @@ ol {
   font-size: 17px;
 }
 
-.career-note {
-  position: relative;
-  padding: 22px;
-  border: 1px solid rgba(35, 118, 96, 0.2);
-  border-top: 4px solid var(--blue);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.88);
-  box-shadow: var(--shadow);
-}
-
-.career-note > span {
-  color: var(--blue);
-  font-size: 10px;
-  font-weight: 800;
-}
-
-.career-note > strong {
-  display: block;
-  margin-top: 9px;
-  font-size: 17px;
-}
-
-.career-note > p {
-  margin-top: 9px;
-  color: var(--muted);
-  font-size: 13px;
-}
-
-.capability-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 16px;
-}
-
-.capability-list i {
-  padding: 5px 8px;
-  border-radius: 4px;
-  color: var(--blue);
-  background: var(--surface-blue);
-  font-size: 11px;
-  font-style: normal;
-  font-weight: 700;
-}
-
 .hero-results {
   position: relative;
   display: grid;
@@ -382,7 +344,7 @@ ol {
   margin-top: 46px;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(251, 248, 242, 0.92);
   box-shadow: 0 8px 26px rgba(40, 57, 48, 0.07);
 }
 
@@ -423,7 +385,7 @@ ol {
 }
 
 .portfolio-section:nth-of-type(odd) {
-  background: #fbfcf9;
+  background: #f8f3ea;
 }
 
 .section-heading {
@@ -436,20 +398,11 @@ ol {
 
 .chapter-number {
   display: block;
-  color: var(--emerald);
+  color: var(--gold);
   font-size: 24px;
   font-weight: 800;
   line-height: 1;
 }
-
-#wbs .chapter-number,
-#stakeholders .chapter-number { color: var(--blue); }
-
-#deliverables .chapter-number,
-#risks .chapter-number { color: var(--gold); }
-
-#gantt .chapter-number,
-#retrospective .chapter-number { color: var(--emerald); }
 
 .section-kicker {
   margin-top: 10px;
@@ -605,8 +558,8 @@ ol {
   position: relative;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 16px;
-  margin-top: 22px;
+  gap: 0;
+  margin-top: 26px;
   padding: 0;
   list-style: none;
 }
@@ -614,10 +567,10 @@ ol {
 .milestone-rail::before {
   content: "";
   position: absolute;
-  left: 5%;
-  right: 5%;
-  top: 12px;
-  height: 2px;
+  left: 9px;
+  right: calc(20% - 9px);
+  top: 9px;
+  height: 1px;
   background: var(--line);
 }
 
@@ -626,31 +579,43 @@ ol {
   z-index: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.milestone-rail li::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--emerald);
+  border-radius: 50%;
+  background: var(--emerald);
+  box-shadow: inset 0 0 0 3px var(--paper);
 }
 
 .milestone-rail time {
-  min-width: 58px;
-  padding: 3px 7px;
-  border: 2px solid var(--line);
-  border-radius: 4px;
-  color: var(--muted);
-  background: var(--surface);
-  font-size: 11px;
+  margin-top: 13px;
+  padding: 0;
+  border: 0;
+  color: var(--emerald-strong);
+  background: transparent;
+  font-size: 12px;
   font-weight: 800;
 }
 
 .milestone-rail span {
-  margin-top: 9px;
+  margin-top: 7px;
   font-size: 12px;
   font-weight: 700;
 }
 
-.milestone-rail .milestone-live time {
+.milestone-rail .milestone-live::before {
   border-color: var(--coral);
+  background: var(--coral);
+}
+
+.milestone-rail .milestone-live time {
   color: var(--coral);
-  background: var(--surface-coral);
 }
 
 .phase-index {
@@ -716,7 +681,7 @@ ol {
 .document-canvas {
   height: 520px;
   overflow: auto;
-  background: #f0f3f1;
+  background: #eee7dc;
   overscroll-behavior: contain;
 }
 
@@ -783,7 +748,7 @@ ol {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   border-bottom: 1px solid var(--line);
-  background: #f0f3f1;
+  background: #eee7dc;
 }
 
 .deliverable-tabs button,
@@ -901,7 +866,7 @@ ol {
   padding: 3px;
   border: 1px solid var(--line);
   border-radius: 7px;
-  background: #edf1ee;
+  background: #f0e8dd;
 }
 
 .segmented-control button {
@@ -991,7 +956,7 @@ ol {
   padding: 5px 9px;
   border: 1px solid var(--line);
   border-radius: 4px;
-  background: #f4f6f4;
+  background: #f6f0e7;
   font-size: 10px;
 }
 
@@ -1026,7 +991,7 @@ ol {
   top: 0;
   padding: 10px 9px;
   color: var(--muted);
-  background: #edf1ee;
+  background: #f0e8dd;
   text-align: left;
   font-size: 10px;
 }
@@ -1038,7 +1003,7 @@ ol {
 }
 
 .task-table tbody tr:hover {
-  background: #f7faf8;
+  background: #f8f3eb;
 }
 
 .task-table th:nth-child(1),
@@ -1096,7 +1061,7 @@ ol {
   align-items: center;
   gap: 12px;
   border-bottom: 1px solid var(--line);
-  background: #f8faf8;
+  background: #f8f3eb;
 }
 
 .stakeholder-context strong {
@@ -1122,7 +1087,7 @@ ol {
   align-content: start;
   gap: 8px;
   border-right: 1px solid var(--line);
-  background: #f2f5f3;
+  background: #efe7dc;
 }
 
 .stakeholder-chip {
@@ -1193,7 +1158,7 @@ ol {
 .detail-section {
   padding: 13px 14px;
   border-left: 3px solid var(--line);
-  background: #f6f8f6;
+  background: #f7f1e8;
 }
 
 .detail-section.wide {
@@ -1274,7 +1239,7 @@ ol {
   grid-template-rows: minmax(300px, auto) 34px;
   padding: 20px 18px 14px;
   border-right: 1px solid var(--line);
-  background: #f2f5f3;
+  background: #efe7dc;
 }
 
 .matrix-side-label {
@@ -1294,7 +1259,6 @@ ol {
 
 .matrix-side-label span {
   writing-mode: vertical-rl;
-  transform: rotate(180deg);
 }
 
 .matrix-bottom-label {
@@ -1383,23 +1347,16 @@ ol {
 
 .result-story {
   display: grid;
-  grid-template-columns: 1fr 36px 1fr 36px 1.15fr;
+  grid-template-columns: 1fr 44px 1fr 44px 1.15fr;
   align-items: stretch;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--surface);
-  box-shadow: 0 10px 30px rgba(40, 57, 48, 0.05);
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  background: transparent;
 }
 
 .result-story article {
   min-width: 0;
-  padding: 20px 22px;
-}
-
-.result-story article + .result-operator,
-.result-story .result-total {
-  border-left: 1px solid var(--line);
+  padding: 28px 24px 30px;
 }
 
 .result-story article > span {
@@ -1411,8 +1368,8 @@ ol {
 .result-story article > strong {
   display: block;
   margin-top: 5px;
-  color: var(--blue);
-  font-size: 31px;
+  color: var(--ink);
+  font-size: 42px;
   line-height: 1.1;
 }
 
@@ -1430,10 +1387,10 @@ ol {
   position: relative;
   display: block;
   height: 5px;
-  margin-top: 14px;
+  margin-top: 5px;
   overflow: hidden;
   border-radius: 3px;
-  background: #e7ebe8;
+  background: #ddd6cc;
 }
 
 .result-story article > i::after {
@@ -1445,11 +1402,11 @@ ol {
 }
 
 .result-story .result-highlight {
-  background: var(--surface-gold);
+  background: transparent;
 }
 
 .result-story .result-highlight > strong {
-  color: var(--gold);
+  color: var(--ink);
   background: transparent;
 }
 
@@ -1459,33 +1416,42 @@ ol {
 }
 
 .result-story .result-total {
-  background: var(--surface-soft);
+  background: transparent;
 }
 
 .result-story .result-total > strong {
-  color: var(--emerald-strong);
+  color: var(--ink);
   background: transparent;
 }
 
 .result-story .result-total > i::after {
-  background: var(--emerald);
+  background: var(--coral);
 }
 
 .result-story article > em {
   display: block;
-  margin-top: 5px;
-  color: var(--emerald-strong);
+  min-height: 18px;
+  margin-top: 7px;
+  color: var(--gold);
   font-size: 12px;
   font-style: normal;
   font-weight: 800;
   text-align: right;
 }
 
+.result-story .result-total > em {
+  color: var(--coral);
+}
+
+.result-story .result-delta {
+  visibility: hidden;
+}
+
 .result-operator {
   display: grid;
   place-items: center;
   color: var(--muted);
-  background: #f5f7f5;
+  background: transparent;
   font-size: 18px;
 }
 
@@ -1528,8 +1494,9 @@ ol {
 
 .retro-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
+  grid-template-columns: minmax(0, 1.45fr) minmax(300px, 0.85fr);
+  align-items: start;
+  gap: 30px;
   margin-top: 26px;
 }
 
@@ -1542,14 +1509,14 @@ ol {
 }
 
 .core-learning {
-  padding: 6px 0 22px;
+  padding: 10px 0 28px;
   border: 0;
   border-bottom: 1px solid var(--line);
   background: transparent;
 }
 
 .improvement-note {
-  padding: 28px 30px;
+  padding: 20px 22px;
   border: 1px solid #edc4b7;
   border-left: 5px solid var(--coral);
   border-radius: 6px;
@@ -1562,13 +1529,26 @@ ol {
   font-size: 17px;
 }
 
-.improvement-note h3 { font-size: 24px; }
+.core-learning h3 {
+  margin-top: 16px;
+  font-size: 36px;
+  line-height: 1.3;
+}
+
+.improvement-note h3 { font-size: 18px; }
 
 .core-learning p,
 .improvement-note p {
   margin-top: 8px;
   color: var(--muted);
   font-size: 12px;
+}
+
+.core-learning p {
+  max-width: 760px;
+  margin-top: 14px;
+  font-size: 14px;
+  line-height: 1.85;
 }
 
 .action-plan {
@@ -1617,7 +1597,7 @@ ol {
 
 .contact-band {
   padding: 68px 0;
-  background: #e7efe9;
+  background: #e3d5c6;
   border-bottom: 1px solid var(--line);
 }
 
@@ -1668,7 +1648,7 @@ ol {
 .site-footer {
   padding: 18px 0;
   color: var(--muted);
-  background: var(--paper);
+  background: #d7c2ad;
   font-size: 11px;
 }
 
@@ -1703,7 +1683,7 @@ ol {
     grid-template-columns: repeat(4, 1fr);
     padding: 12px 24px 16px;
     border-bottom: 1px solid var(--line);
-    background: rgba(247, 248, 244, 0.98);
+    background: rgba(243, 239, 230, 0.98);
     box-shadow: var(--shadow);
     transform: translateY(-130%);
     transition: transform 180ms ease;
@@ -1735,10 +1715,6 @@ ol {
   .hero-shell {
     grid-template-columns: 1fr;
     gap: 28px;
-  }
-
-  .career-note {
-    max-width: 620px;
   }
 
   .charter-layout {
@@ -1878,33 +1854,6 @@ ol {
     margin-top: 20px;
   }
 
-  .career-note {
-    padding: 13px 14px;
-  }
-
-  .career-note > span,
-  .career-note > p {
-    display: none;
-  }
-
-  .career-note > strong {
-    margin-top: 0;
-    font-size: 14px;
-  }
-
-  .capability-list {
-    margin-top: 8px;
-    flex-wrap: nowrap;
-    gap: 4px;
-    overflow-x: auto;
-  }
-
-  .capability-list i {
-    flex: 0 0 auto;
-    padding: 4px 7px;
-    font-size: 9px;
-  }
-
   .hero-results {
     grid-template-columns: 1fr 1fr;
     margin-top: 24px;
@@ -2026,9 +1975,9 @@ ol {
   }
 
   .milestone-rail::before {
-    left: 45px;
+    left: 9px;
     right: auto;
-    width: 510px;
+    width: 440px;
   }
 
   .milestone-rail li {
@@ -2369,8 +2318,7 @@ ol {
 
   .result-operator {
     min-height: 0;
-    border-left: 1px solid var(--line);
-    border-right: 1px solid var(--line);
+    border: 0;
   }
 
   .kpi-grid {
@@ -2389,6 +2337,23 @@ ol {
 
   .retro-grid {
     grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .core-learning h3 {
+    font-size: 28px;
+  }
+
+  .core-learning p {
+    font-size: 13px;
+  }
+
+  .improvement-note {
+    padding: 17px 18px;
+  }
+
+  .improvement-note h3 {
+    font-size: 17px;
   }
 
   .action-plan {
@@ -2510,14 +2475,6 @@ ol {
             <a class="primary-cta" href="#charter">查看完整案例 <span data-icon="arrow-down"></span></a>
           </div>
 
-          <aside class="career-note" aria-label="求职方向">
-            <span>CAREER DIRECTION</span>
-            <strong>目标岗位：项目专员 / 项目助理</strong>
-            <p>用真实业务结果证明学习能力、结构化思考与跨角色推进能力。</p>
-            <div class="capability-list">
-              <i>范围拆解</i><i>进度控制</i><i>沟通协同</i><i>风险预案</i><i>复盘改进</i>
-            </div>
-          </aside>
         </div>
         <div class="hero-results page-shell" aria-label="项目核心结果">
           <div><strong>172<span>万</span></strong><p>总 GMV</p></div>
@@ -2683,11 +2640,11 @@ ol {
             <div><h2>用结果校准下一次行动</h2><p>直播当晚未达目标，但追售超额完成，最终验证“大客户推货”模式。</p></div>
           </header>
           <div class="result-story" aria-label="GMV 结果对比">
-            <article><span>直播当晚</span><strong>108 <small>万</small></strong><p>目标 120 万 · 达成 90%</p><i style="--bar:90%"></i></article>
+            <article><span>直播当晚</span><strong>108 <small>万</small></strong><p>目标 120 万 · 达成 90%</p><em class="result-delta" aria-hidden="true">&nbsp;</em><i style="--bar:90%"></i></article>
             <b class="result-operator">+</b>
-            <article class="result-highlight"><span>追售期</span><strong>64 <small>万</small></strong><p>目标 40 万 · 达成 160%</p><i style="--bar:100%"></i><em>+60%</em></article>
+            <article class="result-highlight"><span>追售期</span><strong>64 <small>万</small></strong><p>目标 40 万 · 达成 160%</p><em>+60%</em><i style="--bar:100%"></i></article>
             <b class="result-operator">=</b>
-            <article class="result-total"><span>总 GMV</span><strong>172 <small>万</small></strong><p>目标 160 万 · 达成 108%</p><i style="--bar:100%"></i><em>+8%</em></article>
+            <article class="result-total"><span>总 GMV</span><strong>172 <small>万</small></strong><p>目标 160 万 · 达成 108%</p><em>+8%</em><i style="--bar:100%"></i></article>
           </div>
           <div class="kpi-grid">
             <article><span>私域场观 UV</span><strong>3,800</strong><p>目标 4,500 · 84%</p></article>
@@ -3163,7 +3120,7 @@ let activeStakeholderGroup = "manage";
 function selectStakeholder(id) {
   const item = stakeholders.find((stakeholder) => stakeholder.id === id);
   stakeholderList.querySelectorAll("button").forEach((button) => button.classList.toggle("active", button.dataset.id === id));
-  stakeholderDetail.innerHTML = `<span class="detail-label">STAKEHOLDER</span><h3>${item.role}</h3><p class="detail-meta">${item.person} · 权力 ${item.power} · 利益 ${item.interest} · ${item.stance}</p><div class="detail-grid"><div class="detail-section"><span>干系人关注点（原文）</span><p>${item.concern}</p></div><div class="detail-section"><span>我的关注点（原文）</span><p>${item.focus}</p></div><div class="detail-section wide"><span>沟通策略（原文）</span><p>${item.strategy}</p></div></div>`;
+  stakeholderDetail.innerHTML = `<span class="detail-label">STAKEHOLDER</span><h3>${item.role}</h3><p class="detail-meta">${item.person} · 权力 ${item.power} · 利益 ${item.interest} · ${item.stance}</p><div class="detail-grid"><div class="detail-section"><span>干系人关注点</span><p>${item.concern}</p></div><div class="detail-section"><span>我的关注点</span><p>${item.focus}</p></div><div class="detail-section wide"><span>沟通策略</span><p>${item.strategy}</p></div></div>`;
 }
 
 function renderStakeholderGroup(groupId) {

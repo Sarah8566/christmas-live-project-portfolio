@@ -249,7 +249,7 @@ ol {
 .hero-wash {
   position: absolute;
   inset: 0;
-  background: rgba(238, 243, 239, 0.38);
+  background: transparent;
 }
 
 .hero-shell {
@@ -420,8 +420,6 @@ ol {
   padding: 96px 0;
   border-bottom: 1px solid var(--line);
   background: var(--paper);
-  content-visibility: auto;
-  contain-intrinsic-size: auto 980px;
 }
 
 .portfolio-section:nth-of-type(odd) {
@@ -438,11 +436,20 @@ ol {
 
 .chapter-number {
   display: block;
-  color: var(--coral);
+  color: var(--emerald);
   font-size: 24px;
   font-weight: 800;
   line-height: 1;
 }
+
+#wbs .chapter-number,
+#stakeholders .chapter-number { color: var(--blue); }
+
+#deliverables .chapter-number,
+#risks .chapter-number { color: var(--gold); }
+
+#gantt .chapter-number,
+#retrospective .chapter-number { color: var(--emerald); }
 
 .section-kicker {
   margin-top: 10px;
@@ -572,10 +579,10 @@ ol {
 
 .milestone-block {
   margin-top: 32px;
-  padding: 22px 26px 24px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--surface);
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
 }
 
 .subsection-title {
@@ -1208,6 +1215,13 @@ ol {
   line-height: 1.65;
 }
 
+.detail-section p { white-space: pre-line; }
+
+.stakeholder-detail .detail-section p {
+  font-size: 12px;
+  line-height: 1.8;
+}
+
 .risk-stats {
   width: fit-content;
   display: grid;
@@ -1434,7 +1448,11 @@ ol {
   background: var(--surface-gold);
 }
 
-.result-story .result-highlight > strong,
+.result-story .result-highlight > strong {
+  color: var(--gold);
+  background: transparent;
+}
+
 .result-story .result-highlight > i::after {
   color: var(--gold);
   background: var(--gold);
@@ -1444,10 +1462,23 @@ ol {
   background: var(--surface-soft);
 }
 
-.result-story .result-total > strong,
-.result-story .result-total > i::after {
+.result-story .result-total > strong {
   color: var(--emerald-strong);
+  background: transparent;
+}
+
+.result-story .result-total > i::after {
   background: var(--emerald);
+}
+
+.result-story article > em {
+  display: block;
+  margin-top: 5px;
+  color: var(--emerald-strong);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 800;
+  text-align: right;
 }
 
 .result-operator {
@@ -1497,9 +1528,9 @@ ol {
 
 .retro-grid {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 12px;
-  margin-top: 20px;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 26px;
 }
 
 .core-learning,
@@ -1510,8 +1541,18 @@ ol {
   background: var(--surface);
 }
 
+.core-learning {
+  padding: 6px 0 22px;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+}
+
 .improvement-note {
-  border-left-color: var(--coral);
+  padding: 28px 30px;
+  border: 1px solid #edc4b7;
+  border-left: 5px solid var(--coral);
+  border-radius: 6px;
   background: var(--surface-coral);
 }
 
@@ -1520,6 +1561,8 @@ ol {
   margin-top: 7px;
   font-size: 17px;
 }
+
+.improvement-note h3 { font-size: 24px; }
 
 .core-learning p,
 .improvement-note p {
@@ -1561,7 +1604,8 @@ ol {
 }
 
 .action-plan li p {
-  font-size: 11px;
+  font-size: 13px;
+  font-weight: 700;
   line-height: 1.55;
 }
 
@@ -1971,7 +2015,7 @@ ol {
   }
 
   .milestone-block {
-    padding: 18px 16px;
+    padding: 0;
   }
 
   .milestone-rail {
@@ -2319,6 +2363,10 @@ ol {
     line-height: 1.5;
   }
 
+  .result-story article > em {
+    font-size: 10px;
+  }
+
   .result-operator {
     min-height: 0;
     border-left: 1px solid var(--line);
@@ -2447,7 +2495,6 @@ ol {
 
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
-        <img class="hero-visual" src="./wbs-hero.webp" alt="圣诞直播项目工作分解结构" width="1200" height="553" decoding="async" fetchpriority="low" />
         <div class="hero-wash"></div>
         <div class="page-shell hero-shell">
           <div class="hero-copy">
@@ -2465,7 +2512,7 @@ ol {
 
           <aside class="career-note" aria-label="求职方向">
             <span>CAREER DIRECTION</span>
-            <strong>目标岗位：项目管理方向</strong>
+            <strong>目标岗位：项目专员 / 项目助理</strong>
             <p>用真实业务结果证明学习能力、结构化思考与跨角色推进能力。</p>
             <div class="capability-list">
               <i>范围拆解</i><i>进度控制</i><i>沟通协同</i><i>风险预案</i><i>复盘改进</i>
@@ -2638,9 +2685,9 @@ ol {
           <div class="result-story" aria-label="GMV 结果对比">
             <article><span>直播当晚</span><strong>108 <small>万</small></strong><p>目标 120 万 · 达成 90%</p><i style="--bar:90%"></i></article>
             <b class="result-operator">+</b>
-            <article class="result-highlight"><span>追售期</span><strong>64 <small>万</small></strong><p>目标 40 万 · 达成 160%</p><i style="--bar:100%"></i></article>
+            <article class="result-highlight"><span>追售期</span><strong>64 <small>万</small></strong><p>目标 40 万 · 达成 160%</p><i style="--bar:100%"></i><em>+60%</em></article>
             <b class="result-operator">=</b>
-            <article class="result-total"><span>总 GMV</span><strong>172 <small>万</small></strong><p>目标 160 万 · 达成 108%</p><i style="--bar:100%"></i></article>
+            <article class="result-total"><span>总 GMV</span><strong>172 <small>万</small></strong><p>目标 160 万 · 达成 108%</p><i style="--bar:100%"></i><em>+8%</em></article>
           </div>
           <div class="kpi-grid">
             <article><span>私域场观 UV</span><strong>3,800</strong><p>目标 4,500 · 84%</p></article>
@@ -3094,17 +3141,17 @@ const stakeholderGroups = [
 ];
 
 const stakeholders = [
-  { id: "director", role: "运营总监", person: "张总监", group: "manage", power: "高", interest: "高", stance: "支持", concern: "总 GMV、大客户模式验证、项目节奏、邀约量与团队执行状态。", strategy: "日报 + 关键节点确认；汇报先给结论，再给依据，并明确偏差、决策与资源诉求。", frequency: "每日一次进度汇报" },
-  { id: "ip", role: "IP 本人", person: "陆姐", group: "manage", power: "高", interest: "高", stance: "支持", concern: "个人形象、内容真实感、客户信任与砍价演出的说服力。", strategy: "脚本讨论 + 非正式沟通；尊重内容节奏判断，同时提前锁定档期和确认节点。", frequency: "对稿 1 次，预热期每日简短确认" },
-  { id: "factory", role: "厂长", person: "老林 / 凡凡 / 庆哥", group: "manage", power: "高", interest: "高", stance: "中立", concern: "货品销售、个人曝光、砍价过程可信度与合作顺畅度。", strategy: "先锁选品，再共创砍价节奏与故事节点，以货品销量驱动配合。", frequency: "预热与脚本阶段各 1 - 2 次" },
-  { id: "supply", role: "供应链", person: "印景 / 玉见", group: "satisfy", power: "中", interest: "中", stance: "支持", concern: "货品利润、留库货品销量、展示效果与合作成本。", strategy: "提前明确需求、锁定好品，并通过当面验货、比价和库存质检减少返工。", frequency: "直播前 1 - 2 周集中对接" },
-  { id: "host", role: "主播", person: "王姐", group: "inform", power: "中", interest: "高", stance: "支持", concern: "直播节奏、控场流畅度、互动效果与角色配合默契。", strategy: "让主播主导节奏设计，保留创作空间，同时明确初稿、定稿和彩排节点。", frequency: "脚本讨论 2 - 3 次，彩排 1 次" },
-  { id: "sales", role: "销售团队", person: "各组长和组员", group: "inform", power: "中", interest: "高", stance: "中立", concern: "预热钩子、货品一致性、库存质量与大客户推货成功率。", strategy: "通过会议、群公告和一对一答疑同步直播逻辑、话术、素材与到场数据。", frequency: "预热期每两天同步排名，直播中实时反馈" },
-  { id: "market", role: "市场专员", person: "三哥 / 王哥 / 志哥", group: "inform", power: "低", interest: "中", stance: "中立", concern: "入选货品数量、业绩提成与大客户需求的可匹配性。", strategy: "提前给出选品需求和大客户偏好，锁定选品窗口，每位大客户准备多条货品。", frequency: "直播前 1 - 2 周对接 2 - 3 次" },
-  { id: "designer", role: "美工", person: "珊珊", group: "monitor", power: "低", interest: "中", stance: "中立", concern: "需求清晰度、制作时间与可控的修改次数。", strategy: "提前排期、一次给全物料清单，先确认简易初稿再完成整稿。", frequency: "需求前一周排期，制作期每日沟通" },
-  { id: "moments", role: "朋友圈专员", person: "阿秋", group: "monitor", power: "低", interest: "低", stance: "支持", concern: "素材提前量、文案准备时间和发布时间。", strategy: "在活动表中同步发布内容与时间，直播切片完成后实时推送。", frequency: "至少提前一天给次日素材" },
-  { id: "analyst", role: "数据分析员", person: "阿荣", group: "monitor", power: "低", interest: "低", stance: "中立", concern: "需求提前、减少临时变动与数据表逻辑清晰。", strategy: "提前给表格需求，直播前用模拟数据跑通汇总流程。", frequency: "直播前 2 天提需求，前 1 天测试" },
-  { id: "platform", role: "小程序服务商", person: "外部", group: "monitor", power: "低", interest: "低", stance: "中立", concern: "直播时间明确、服务稳定、异常响应与压力测试。", strategy: "提前 5 天测试、前 2 天确认结果，直播当天保持技术对接在线。", frequency: "测试、结果确认、直播当天三次关键沟通" },
+  { id: "director", role: "运营总监", person: "张总监", group: "manage", power: "高", interest: "高", stance: "支持", concern: "①整场GMV达标\n②大客户推货模式有效提高GMV\n③各环节按时、有序推进\n④销售的邀约量达标\n⑤货品的质量可靠\n⑥团队士气和执行状态良好", focus: "①清晰接收她的项目目标和指令\n②及时获得她对项目进度的反馈，以调整执行方向\n③及时获得关键的资源支持（预算审批、高层协调）", strategy: "方式：日报+关键节点确认\n频率：每日一次进度汇报\n内容：目标进展、偏差预警、需要她决策的风险、需要她协调的资源\n策略：接到指令后复述确认，确保理解一致。汇报时先给结论再给依据。" },
+  { id: "ip", role: "IP本人", person: "陆姐", group: "manage", power: "高", interest: "高", stance: "支持", concern: "①个人形象与信誉维护\n②直播内容给客户感受真实自然\n③客户信任度\n④与厂长的“砍价”演出有说服力", focus: "①提前锁定她的档期\n②与主播共创出精彩的直播脚本\n③直播时呈现出精彩的直播内容", strategy: "方式：脚本讨论+非正式沟通\n频率：脚本阶段1次正式对稿，预热期每天简短确认当天内容\n内容：直播脚本框架、砍价节奏点、个人形象呈现方式\n策略：结合玩法设置，尊重她对内容节奏的把控" },
+  { id: "factory", role: "厂长", person: "老林/凡凡/庆哥", group: "manage", power: "高", interest: "高", stance: "中立", concern: "①货品的销售及提成收入\n②获得更多观众的喜爱，个人粉丝量增长\n③“砍价”过程让人信服\n④与IP的合作顺畅", focus: "①直播时配合到位，呈现出精彩的直播内容\n②预热视频拍摄和脚本讨论及彩排时准时到场参与沟通", strategy: "方式：微信提醒+当面沟通\n频率：预热、脚本策划阶段各1-2次\n内容：提前确认货品、设计砍价节奏、各款货品的故事线和配合节点\n策略：先将选品定好，厂长为了货品销量，会认真配合" },
+  { id: "supply", role: "供应链", person: "印景/玉见", group: "satisfy", power: "中", interest: "中", stance: "支持", concern: "①货品利润点\n②留库货品销量\n③直播货品展示效果\n④合作顺畅度", focus: "①货品品质过关\n②货品到手价有竞争力", strategy: "方式：选品阶段当面验货+比价+库存质检\n频率：每场直播前1-2周选品对接\n内容：选品清单、价格确认、留仓货品明细\n策略：提前明确需求、锁定好品、确保直播前实物到位，不增加对方额外沟通成本。" },
+  { id: "host", role: "主播", person: "王姐", group: "inform", power: "中", interest: "高", stance: "支持", concern: "①直播节奏，控场流畅度\n②直播氛围和情绪带动力\n③弹幕互动效果\n④能被观众记住、喜爱\n⑤与IP/厂长的配合默契度", focus: "①按时产出并确认直播脚本框架\n②设计出对观众有吸引力的选品和打法\n③有效把控每个品的直播时长和节奏\n④内容能带动客户情绪", strategy: "方式：脚本共创会+彩排预演\n频率：脚本阶段2-3次讨论，彩排1次\n内容：脚本框架（上品顺序、时长分配）、各品故事点、弹幕应答备选话术、节奏卡点。\n策略：让她主导节奏设计。给她留创作空间，同时设定明确的节点（脚本初稿日、定稿日），避免无边界修改。" },
+  { id: "sales", role: "销售团队", person: "各组长和组员", group: "inform", power: "中", interest: "高", stance: "中立", concern: "①预热素材和奖品对客户的吸引力\n②直播内容的观赏性和转化力\n③货品实物与样品展示的一致性\n④爆品的库存够，质量稳定\n⑤大客户推货的成功率", focus: "①按时完成邀约目标\n②通过话术引导，使客户植入：直播货品很优惠的观念\n③及时配合反馈客户偏好和填写销售数据", strategy: "方式：开会+群公告+一对一解答\n频率：预热、直播前同步信息；预热期每两天同步一次邀约数据进度排名，直播实时反馈客户到场率\n内容：直播逻辑线（钩子、节奏、优惠力度）、预热素材、货品实物信息、话术库、大客户偏好汇总\n策略：将预热的钩子和直播的逻辑线告知销售，销售信任我们的内容，才会用心邀约客户" },
+  { id: "market", role: "市场专员", person: "三哥/王哥/志哥", group: "inform", power: "低", interest: "中", stance: "中立", concern: "①货品被选中参加直播的数量（KPI贡献）\n②直播走量带来的业绩提成\n③大客户需求的现实性和可匹配性", focus: "①选品阶段能提供符合需求的货品\n②每位大客户至少备三款货", strategy: "方式：选品前提醒节点+选品阶段当面沟通需求\n频率：直播前1-2周选品对接2-3次\n内容：选品需求清单、大客户偏好、货品质量与库存确认\n策略：提前将选品需求明确告知，锁定选品窗口期；大客户货品需求提前5天给出，给予备货时间" },
+  { id: "designer", role: "美工", person: "珊珊", group: "monitor", power: "低", interest: "中", stance: "中立", concern: "①物料设计需求的清晰度和准确性\n②充足的制作时间\n③可控的修改次数", focus: "①设计稿准时交付\n②设计符合本次活动调性", strategy: "方式：在策划主题时就提前打好招呼，让对方有排期准备+提前给到设计需求+分批确认\n频率：设计需求前一周打招呼排期，设计阶段每日沟通\n内容：物料清单、尺寸要求、文案内容、设计风格、交付时间\n策略：先让她出简易初稿，双方进行讨论，在呈现风格上达成一致后再出完整稿" },
+  { id: "moments", role: "朋友圈专员", person: "阿秋", group: "monitor", power: "低", interest: "低", stance: "支持", concern: "①素材能提前给到\n②充足的文案准备时间\n③发布时间明确", focus: "①按排期准时将内容发布到销售账号", strategy: "方式：活动表格中同步发布内容和时间\n频率：预热期至少提前一天给到次日素材；直播当天切片完成后实时同步\n内容：切片视频、海报、发布时间\n策略：提前同步内容，减少信息差，给予更多自主思考时间" },
+  { id: "analyst", role: "数据分析员", person: "阿荣", group: "monitor", power: "低", interest: "低", stance: "中立", concern: "①活动需要配合的事项提前告知\n②需求不要总是临时变动", focus: "①数据表格公式正确，在直播前完成制作\n②活动结束当晚，销售汇总数据及时出来", strategy: "方式：提前沟通需求+直播前测试\n频率：直播前2天给到表格需求，直播前1天完成模拟测试\n内容：表格需求、货品内容、汇总逻辑\n策略：需求提前给，直播前用模拟数据跑一遍流程" },
+  { id: "platform", role: "小程序服务商", person: "外部", group: "monitor", power: "低", interest: "低", stance: "中立", concern: "①直播时间明确\n②合作顺利无投诉", focus: "①直播期间服务稳定，不卡顿或崩溃\n②出现异常时能快速响应及时解决\n③能配合在直播前完成压力测试\n④有备用方案应对突发情况", strategy: "方式：提前告知直播时间并测试+直播中保持技术对接顺畅\n频率：提前5天联系测试，直播前2天确认压力测试结果，直播当天保持在线对接\n内容：压力测试安排、应急预案、技术对接人联系\n策略：提前告知需求、明确时间节点、确认技术保障，不给对方增加额外负担" },
 ];
 
 const stakeholderTabs = document.getElementById("stakeholder-tabs");
@@ -3116,7 +3163,7 @@ let activeStakeholderGroup = "manage";
 function selectStakeholder(id) {
   const item = stakeholders.find((stakeholder) => stakeholder.id === id);
   stakeholderList.querySelectorAll("button").forEach((button) => button.classList.toggle("active", button.dataset.id === id));
-  stakeholderDetail.innerHTML = `<span class="detail-label">STAKEHOLDER</span><h3>${item.role}</h3><p class="detail-meta">${item.person} · 权力 ${item.power} · 利益 ${item.interest} · ${item.stance}</p><div class="detail-grid"><div class="detail-section"><span>对方关注点</span><p>${item.concern}</p></div><div class="detail-section"><span>沟通频率</span><strong>${item.frequency}</strong></div><div class="detail-section wide"><span>沟通策略</span><p>${item.strategy}</p></div></div>`;
+  stakeholderDetail.innerHTML = `<span class="detail-label">STAKEHOLDER</span><h3>${item.role}</h3><p class="detail-meta">${item.person} · 权力 ${item.power} · 利益 ${item.interest} · ${item.stance}</p><div class="detail-grid"><div class="detail-section"><span>干系人关注点（原文）</span><p>${item.concern}</p></div><div class="detail-section"><span>我的关注点（原文）</span><p>${item.focus}</p></div><div class="detail-section wide"><span>沟通策略（原文）</span><p>${item.strategy}</p></div></div>`;
 }
 
 function renderStakeholderGroup(groupId) {
